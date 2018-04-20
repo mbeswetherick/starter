@@ -1,6 +1,22 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom'
 import logo from './logo.svg';
 import './App.css';
+
+const Horse = () => (
+  <h1>I am, I aaaam, I am the Horse Seeker</h1>
+);
+
+const Hello = ({ state }) => (
+  <div className="App-header">
+      <h1>Hello Mcodonalds</h1>
+    <p className="App-intro">
+      {state.fetching
+        ? 'Fetching message from API'
+        : state.message}
+    </p>
+  </div>
+)
 
 class App extends Component {
   constructor(props) {
@@ -35,14 +51,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <h1>Horse</h1>
-        </div>
-        <p className="App-intro">
-          {this.state.fetching
-            ? 'Fetching message from API'
-            : this.state.message}
-        </p>
+        <BrowserRouter>
+          {/* here's a Route */}
+          <div>
+            <Route exact path="/" component={() => <Hello state={this.state}/>} />
+            <Route path="/horse" component={Horse} />
+          </div>
+        </BrowserRouter>
       </div>
     );
   }
