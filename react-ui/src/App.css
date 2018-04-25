@@ -11,6 +11,8 @@ p {
   font-size: 1rem;
   line-height: 1.47rem;
   font-family: Georgia, 'Times New Roman', Times, serif;
+
+  transform: translateX(-45px);
 }
 
 h1 {
@@ -20,6 +22,7 @@ h1 {
   width: 630px;
   font-size: 2rem;
   line-height: 2.24rem;
+  transform: translateX(-45px);
 }
 
 .App-logo {
