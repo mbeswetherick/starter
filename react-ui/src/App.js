@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom'
 import Hello from './routes/Hello';
-import Horse from './routes/Horse';
+import Article from './routes/Article';
 import logo from './logo.svg';
 import './App.css';
 
@@ -14,7 +14,7 @@ class App extends Component {
           {/* here's a Route */}
           <div>
             <Route exact path="/" component={() => <Hello {...this.state}/>} />
-            <Route path="/horse" component={Horse} />
+            <Route path="/horse" component={Article} />
           </div>
         </BrowserRouter>
       </div>
